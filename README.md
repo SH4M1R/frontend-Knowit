@@ -1,1 +1,1 @@
-Front - Red social Knowit
+Front - Intranet sistema de ventas Restaurante
