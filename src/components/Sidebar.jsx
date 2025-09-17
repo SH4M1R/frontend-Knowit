@@ -6,7 +6,7 @@ export default function Sidebar() {
       <h2 style={styles.title}>Restaurante Lautaro´S</h2>
       <nav style={styles.nav}>
         <Link to="/dashboard" style={styles.link}>Dashboard</Link>
-        <Link to="/productos" style={styles.link}>Productos</Link>
+        <Link to="/menu" style={styles.link}>Menu</Link>
         <Link to="/ventas" style={styles.link}>Ventas</Link>
         <div style={styles.bottomLink}>
           <Link to="/login" style={styles.link}>Cerrar Sesión</Link>

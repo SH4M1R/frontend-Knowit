@@ -1,7 +1,7 @@
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import ProductCard from "../components/ProductCard";
 
-const Productos = () => {
+const Menu = () => {
    const productos = [
   { 
     id: 1, 
@@ -81,7 +81,7 @@ const Productos = () => {
   return (
     <>
       <Container className="my-4">
-      <h1 className="mb-4">Productos</h1>
+      <h1 className="mb-4">Menú</h1>
         <Row>
           {productos.map((p) => (
             <Col key={p.id} md={4} className="mb-4">
@@ -94,5 +94,5 @@ const Productos = () => {
   )
 }
 
-export default Productos
+export default Menu
 
