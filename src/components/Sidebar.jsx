@@ -19,7 +19,8 @@ export default function Sidebar() {
 const styles = {
   sidebar: {
     width: "200px",
-    height: "100vh",
+    minHeight: "100vh",
+    height: "auto",
     background: "black",
     color: "white",
     padding: "20px",
