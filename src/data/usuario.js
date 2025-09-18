@@ -1,5 +1,5 @@
 const usuario = {
-  nombre: "Admin",
+  nombre: "Administrador",
   usuario: "admin",
   contraseña: "admin"
 };

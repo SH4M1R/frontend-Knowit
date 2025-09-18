@@ -7,13 +7,15 @@ import Ventas from "./pages/Ventas";
 
 function App() {
   const location = useLocation();
-  const hideSidebar = location.pathname === "/login"; // 👉 condición
+
+  const isLoginPage = location.pathname === "/login";
 
   return (
     <div>
-      {!hideSidebar && <Sidebar />}
+      {/* Sidebar solo si NO estoy en login */}
+      {!isLoginPage && <Sidebar />}
 
-      <main style={{ marginLeft: hideSidebar ? "0" : "220px", padding: "20px" }}>
+      <main style={{ marginLeft: isLoginPage ? "0" : "220px", padding: "20px" }}>
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />

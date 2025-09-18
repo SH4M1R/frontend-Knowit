@@ -11,7 +11,7 @@ const ProductCard = ({ producto }) => {
         </Card.Subtitle>
         <Card.Text>{producto.descripcion}</Card.Text>
         <h5 className="text-primary">S/ {producto.precio.toFixed(2)}</h5>
-        <Button variant="success">Agregar</Button>
+        <Button variant="dark">Agregar</Button>
       </Card.Body>
     </Card>
   );

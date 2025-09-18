@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import user from "../data/usuario";
+import { useAuth } from "../context/AuthContext";
+import userData from "../data/usuario";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -8,11 +9,13 @@ export default function Login() {
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+  const { setUsuario } = useAuth();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (username === user.usuario && password === user.contraseña) {
+    if (username === userData.usuario && password === userData.contraseña) {
       setError("");
+      setUsuario(userData); // 👈 ahora guarda en "usuario"
       navigate("/dashboard");
     } else {
       setError("Usuario o contraseña incorrectos.");
@@ -28,9 +31,18 @@ export default function Login() {
         backgroundPosition: "center",
       }}
     >
-      <div className="card shadow p-4" style={{ maxWidth: "400px", width: "100%", background: "rgba(255,255,255,0.9)" }}>
-        <h2 className="text-center text-success mb-2">Bienvenido a Lautaro´S</h2>
-        <p className="text-center text-muted mb-4">Inicia sesión para continuar</p>
+      <div
+        className="card shadow p-4"
+        style={{
+          maxWidth: "400px",
+          width: "100%",
+          background: "rgba(255,255,255,0.9)",
+        }}
+      >
+        <h2 className="text-center text-dark mb-2">Bienvenido a Lautaro´S</h2>
+        <p className="text-center text-muted mb-4">
+          Inicia sesión para continuar
+        </p>
 
         <form onSubmit={handleSubmit}>
           {/* Usuario */}
@@ -70,7 +82,7 @@ export default function Login() {
 
           {/* Botón */}
           <div className="d-grid">
-            <button type="submit" className="btn btn-success">
+            <button type="submit" className="btn btn-outline-dark">
               Ingresar
             </button>
           </div>

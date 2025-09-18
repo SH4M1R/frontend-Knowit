@@ -1,21 +1,30 @@
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 export default function Sidebar() {
+  const { usuario } = useAuth();
+
   return (
     <aside
-      className="d-flex flex-column p-3 text-white"
-      style={{
-        width: "220px",
-        background: "linear-gradient(180deg, #8B0000, #A93226)",
-        height: "100vh",
-        position: "fixed",
-        top: 0,
-        left: 0,
-        overflowY: "auto"
-      }}
+      className="
+        d-flex flex-column p-3 text-white 
+        bg-dark vh-100 position-fixed top-0 start-0 overflow-auto
+      "
+      style={{ width: "220px" }}
     >
-      <h2 className="fs-5 fw-bold text-center mb-4">🍴 Restaurante Lautaro´S</h2>
+      {/* Título */}
+      <h2 className="fs-5 fw-bold text-center mb-4">
+        🍴 Restaurante Lautaro´S
+      </h2>
 
+      {/* Usuario logueado */}
+      {usuario && (
+        <div className="text-center mb-4">
+          <p className="mb-1 fw-bold">👤 {usuario.nombre}</p>
+        </div>
+      )}
+
+      {/* Navegación */}
       <nav className="nav flex-column gap-3">
         <Link to="/dashboard" className="nav-link text-white fw-semibold">
           Dashboard
@@ -28,6 +37,7 @@ export default function Sidebar() {
         </Link>
       </nav>
 
+      {/* Cerrar Sesión */}
       <div className="mt-auto">
         <Link to="/login" className="nav-link text-warning fw-bold">
           Cerrar Sesión
