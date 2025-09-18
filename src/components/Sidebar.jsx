@@ -13,9 +13,14 @@ export default function Sidebar() {
       style={{ width: "220px" }}
     >
       {/* Título */}
-      <h2 className="fs-5 fw-bold text-center mb-4">
-        🍴 Restaurante Lautaro´S
-      </h2>
+      <div className="d-flex align-items-center justify-content-center mb-4">
+        <img
+          src="/LogoLautaro.png"   // 👈 ponlo en la carpeta public
+          alt="Logo LautaroS"
+          style={{ width: "40px", height: "40px", marginRight: "10px" }}
+        />
+        <h2 className="fs-5 fw-bold mb-0">Restaurante Lautaro´S</h2>
+      </div>
 
       {/* Usuario logueado */}
       {usuario && (
@@ -36,7 +41,7 @@ export default function Sidebar() {
           Ventas
         </Link>
       </nav>
-
+      
       {/* Cerrar Sesión */}
       <div className="mt-auto">
         <Link to="/login" className="nav-link text-warning fw-bold">
