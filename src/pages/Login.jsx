@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import userData from "../data/usuario";
+import fondo from "../assets/fondo.jpg";
+
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -15,7 +17,7 @@ export default function Login() {
     e.preventDefault();
     if (username === userData.usuario && password === userData.contraseña) {
       setError("");
-      setUsuario(userData); // 👈 ahora guarda en "usuario"
+      setUsuario(userData);
       navigate("/dashboard");
     } else {
       setError("Usuario o contraseña incorrectos.");
@@ -26,10 +28,10 @@ export default function Login() {
     <div
       className="d-flex align-items-center justify-content-center vh-100"
       style={{
-        backgroundImage: `url("/src/assets/fondo.jpg")`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+  backgroundImage: `url(${fondo})`,
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+}}
     >
       <div
         className="card shadow p-4"
@@ -45,7 +47,7 @@ export default function Login() {
         </p>
 
         <form onSubmit={handleSubmit}>
-          {/* Usuario */}
+          {}
           <div className="mb-3">
             <label className="form-label">Usuario</label>
             <input
@@ -58,7 +60,7 @@ export default function Login() {
             />
           </div>
 
-          {/* Contraseña */}
+          {}
           <div className="mb-3">
             <label className="form-label">Contraseña</label>
             <div className="input-group">
