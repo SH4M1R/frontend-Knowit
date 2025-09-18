@@ -2,48 +2,37 @@ import { Link } from "react-router-dom";
 
 export default function Sidebar() {
   return (
-    <aside style={styles.sidebar}>
-      <h2 style={styles.title}>Restaurante Lautaro´S</h2>
-      <nav style={styles.nav}>
-        <Link to="/dashboard" style={styles.link}>Dashboard</Link>
-        <Link to="/menu" style={styles.link}>Menu</Link>
-        <Link to="/ventas" style={styles.link}>Ventas</Link>
-        <div style={styles.bottomLink}>
-          <Link to="/login" style={styles.link}>Cerrar Sesión</Link>
-        </div>
+    <aside
+      className="d-flex flex-column p-3 text-white"
+      style={{
+        width: "220px",
+        background: "linear-gradient(180deg, #8B0000, #A93226)",
+        height: "100vh",
+        position: "fixed",
+        top: 0,
+        left: 0,
+        overflowY: "auto"
+      }}
+    >
+      <h2 className="fs-5 fw-bold text-center mb-4">🍴 Restaurante Lautaro´S</h2>
+
+      <nav className="nav flex-column gap-3">
+        <Link to="/dashboard" className="nav-link text-white fw-semibold">
+          Dashboard
+        </Link>
+        <Link to="/menu" className="nav-link text-white fw-semibold">
+          Menú
+        </Link>
+        <Link to="/ventas" className="nav-link text-white fw-semibold">
+          Ventas
+        </Link>
       </nav>
+
+      <div className="mt-auto">
+        <Link to="/login" className="nav-link text-warning fw-bold">
+          Cerrar Sesión
+        </Link>
+      </div>
     </aside>
   );
 }
-
-const styles = {
-  sidebar: {
-    width: "200px",
-    minHeight: "100vh",
-    height: "auto",
-    background: "black",
-    color: "white",
-    padding: "20px",
-    display: "flex",
-    flexDirection: "column",
-    gap: "20px"
-  },
-  title: {
-    fontSize: "18px",
-    marginBottom: "20px"
-  },
-  nav: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "20px",
-    height: "100%",
-  },
-  link: {
-    color: "white",
-    textDecoration: "none",
-    fontSize: "16px"
-  },
-  bottomLink: {
-    marginTop: "auto"
-  }
-};
